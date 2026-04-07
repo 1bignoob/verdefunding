@@ -103,7 +103,7 @@ main {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
   padding: 0.95rem 0;
 }
@@ -155,6 +155,7 @@ main {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+  margin-right: auto;
 }
 
 .site-title {
