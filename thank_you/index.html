@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Thank You | Verde Assist Group</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Thank you for contacting Verde Assist Group. We received your funding inquiry and will follow up within one business day." />
+  <meta name="keywords" content="thank you, funding inquiry received, Verde Assist Group" />
+  <meta name="author" content="Verde Assist Group" />
+  <meta name="publisher" content="Verde Assist Group" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://verdeassistgroup.com/thank_you/" />
+  <meta name="theme-color" content="#10243a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Verde Assist Group" />
+  <meta property="og:site_name" content="Verde Assist Group" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Thank You | Verde Assist Group" />
+  <meta property="og:description" content="Your message was received. A team member will contact you shortly." />
+  <meta property="og:url" content="https://verdeassistgroup.com/thank_you/" />
+  <meta property="og:image" content="https://verdeassistgroup.com/image%20for%20verde.png" />
+  <meta property="og:image:alt" content="Verde Assist Group brand mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thank You | Verde Assist Group" />
+  <meta name="twitter:description" content="Your inquiry has been received." />
+  <meta name="twitter:image" content="https://verdeassistgroup.com/image%20for%20verde.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Thank You",
+    "url": "https://verdeassistgroup.com/thank_you/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Verde Assist Group",
+      "url": "https://verdeassistgroup.com/"
+    }
+  }
+  </script>
+  <link href="../css/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip-link" href="#main" title="Skip directly to the main content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <svg class="logo" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="vg" x1="0" x2="1">
+              <stop offset="0" stop-color="#3B739A" />
+              <stop offset="1" stop-color="#1F4F73" />
+            </linearGradient>
+          </defs>
+          <rect width="48" height="48" rx="10" fill="url(#vg)" />
+          <path d="M14 14 L24 34 L34 14" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
+        <span class="site-title">Verde Assist Group</span>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/" title="Return to Verde Assist Group home page">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container thankyou-main">
+    <h1>Thanks — we received your message</h1>
+    <p>Someone from Verde Assist Group will be in touch within one business day. If this is urgent, please call (718) 300-5951.</p>
+  <p class="thankyou-return"><a class="brand-link" href="/" title="Return to Verde Assist Group home page">Return to site</a></p>
+  <p id="countdown-wrap" class="thankyou-countdown">Returning to homepage in <span id="countdown" aria-live="polite">5</span> seconds. <a id="return-now" class="brand-link" href="/" title="Return immediately to home page">Click here to return now</a>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2025</span> Verde Assist Group. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+  (function(){
+    // Update year
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    var seconds = 5;
+    var countdownEl = document.getElementById('countdown');
+  var returnNowLink = document.getElementById('return-now');
+  // match either a primary button or plain brand-link that returns home
+  var returnBtn = document.querySelector('a.btn.primary[href="/"], a.brand-link[href="/"]');
+    var timerId = null;
+
+    function updateDisplay() {
+      if (countdownEl) countdownEl.textContent = seconds;
+    }
+
+    function startTimer() {
+      updateDisplay();
+      timerId = setInterval(function(){
+        seconds -= 1;
+        if (seconds <= 0) {
+          clearInterval(timerId);
+          // final update
+          updateDisplay();
+          // redirect to homepage
+          window.location.href = '/';
+          return;
+        }
+        updateDisplay();
+      }, 1000);
+    }
+
+    function cancelTimer() {
+      if (timerId) {
+        clearInterval(timerId);
+        timerId = null;
+        var wrap = document.getElementById('countdown-wrap');
+        if (wrap) wrap.textContent = 'You will not be redirected. Use the link above to return when ready.';
+      }
+    }
+
+    // If user clicks either the prominent button or the small return link, cancel the automatic redirect
+    if (returnNowLink) returnNowLink.addEventListener('click', function(){ cancelTimer(); });
+    if (returnBtn) returnBtn.addEventListener('click', function(){ cancelTimer(); });
+
+    // start the countdown when the page is visible
+    if (document.visibilityState === 'visible') startTimer();
+    else {
+      document.addEventListener('visibilitychange', function onVis(){
+        if (document.visibilityState === 'visible') {
+          document.removeEventListener('visibilitychange', onVis);
+          startTimer();
+        }
+      });
+    }
+  })();
+</script>
+</html>
