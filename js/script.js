@@ -185,9 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var testimonialsHost = document.querySelector('[data-testimonials]');
   if (testimonialsHost) {
-    var nameEl = testimonialsHost.querySelector('.testimonial-name');
-    var textEl = testimonialsHost.querySelector('.testimonial-text');
-
     var reviewUrls = [getSiteBasePath() + 'reviews.json', 'reviews.json', './reviews.json'];
     var fetchReviews = function (idx) {
       if (idx >= reviewUrls.length) {
@@ -223,20 +220,57 @@ document.addEventListener('DOMContentLoaded', function () {
           valid[j] = tmp;
         }
 
-        var index = 0;
-        var renderReview = function () {
-          var current = valid[index];
-          if (nameEl) {
-            nameEl.textContent = current.name;
-          }
-          if (textEl) {
-            textEl.textContent = current.review;
-          }
-          index = (index + 1) % valid.length;
+        var esc = function (value) {
+          return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
         };
 
-        renderReview();
-        setInterval(renderReview, 3000);
+        var getVisibleCount = function () {
+          var width = window.innerWidth || testimonialsHost.clientWidth || 1200;
+          if (width >= 1280) {
+            return 5;
+          }
+          if (width >= 1024) {
+            return 4;
+          }
+          if (width >= 760) {
+            return 3;
+          }
+          if (width >= 520) {
+            return 2;
+          }
+          return 1;
+        };
+
+        var startIndex = 0;
+        var renderWindow = function () {
+          var count = Math.min(getVisibleCount(), valid.length);
+          var cards = '';
+          for (var i = 0; i < count; i += 1) {
+            var item = valid[(startIndex + i) % valid.length];
+            cards +=
+              '<article class="testimonial-card" role="listitem">' +
+              '<div class="testimonial-head">' +
+              '<strong class="testimonial-name">' + esc(item.name) + '</strong>' +
+              '<span class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</span>' +
+              '</div>' +
+              '<p class="testimonial-text">' + esc(item.review) + '</p>' +
+              '</article>';
+          }
+          testimonialsHost.innerHTML = '<div class="testimonial-list" role="list">' + cards + '</div>';
+        };
+
+        renderWindow();
+        setInterval(function () {
+          startIndex = (startIndex + 1) % valid.length;
+          renderWindow();
+        }, 3000);
+
+        window.addEventListener('resize', renderWindow);
       })
       .catch(function () {
         // Keep fallback text in markup if reviews file is unavailable.

@@ -657,11 +657,21 @@ a.btn {
 }
 
 .testimonials-rotator {
-  max-width: 74ch;
+  max-width: 100%;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial-list {
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .testimonial-card {
+  flex: 0 0 220px;
+  width: 220px;
   border: 1px solid rgba(126, 190, 255, 0.22);
   border-radius: var(--radius);
   background: rgba(12, 30, 55, 0.65);
@@ -678,7 +688,8 @@ a.btn {
 }
 
 .testimonial-name {
-  color: #eaf4ff;
+  color: var(--brand-strong);
+  font-weight: 800;
 }
 
 .testimonial-stars {
