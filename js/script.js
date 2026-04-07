@@ -12,10 +12,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var primaryNav = document.getElementById('primary-navigation');
 
   if (navToggle && primaryNav) {
-    navToggle.addEventListener('click', function () {
+    navToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
       var expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
       primaryNav.setAttribute('aria-hidden', String(expanded));
+    });
+
+    primaryNav.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+
+    document.addEventListener('click', function () {
+      if (primaryNav.getAttribute('aria-hidden') === 'false') {
+        navToggle.setAttribute('aria-expanded', 'false');
+        primaryNav.setAttribute('aria-hidden', 'true');
+      }
     });
   }
 
