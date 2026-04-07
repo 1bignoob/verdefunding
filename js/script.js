@@ -262,6 +262,10 @@ document.addEventListener('DOMContentLoaded', function () {
               '</article>';
           }
           testimonialsHost.innerHTML = '<div class="testimonial-list" role="list">' + cards + '</div>';
+          var listEl = testimonialsHost.querySelector('.testimonial-list');
+          if (listEl) {
+            listEl.style.setProperty('--cards-visible', String(count));
+          }
         };
 
         renderWindow();
