@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
+  function getSiteBasePath() {
+    var path = window.location.pathname || '/';
+    if (window.location.hostname.endsWith('github.io')) {
+      var parts = path.split('/').filter(Boolean);
+      return parts.length ? '/' + parts[0] + '/' : '/';
+    }
+    return '/';
+  }
+
   var navToggle = document.querySelector('.nav-toggle');
   var primaryNav = document.getElementById('primary-navigation');
 
@@ -73,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (response.ok) {
-          window.location.href = '/thank_you/';
+          window.location.href = getSiteBasePath() + 'thank_you/';
           return;
         }
 
@@ -99,4 +108,27 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealEls.forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    revealEls.forEach(function (el) {
+      el.classList.add('visible');
+    });
+  }
 });

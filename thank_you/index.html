@@ -61,7 +61,7 @@
 
       <nav class="primary-nav" aria-label="Primary navigation">
         <ul>
-          <li><a href="/" title="Return to Verde Assist Group home page">Home</a></li>
+          <li><a href="../" title="Return to Verde Assist Group home page">Home</a></li>
         </ul>
       </nav>
     </div>
@@ -70,8 +70,8 @@
   <main id="main" class="container thankyou-main">
     <h1>Thanks — we received your message</h1>
     <p>Someone from Verde Assist Group will be in touch within one business day. If this is urgent, please call (718) 300-5951.</p>
-  <p class="thankyou-return"><a class="brand-link" href="/" title="Return to Verde Assist Group home page">Return to site</a></p>
-  <p id="countdown-wrap" class="thankyou-countdown">Returning to homepage in <span id="countdown" aria-live="polite">5</span> seconds. <a id="return-now" class="brand-link" href="/" title="Return immediately to home page">Click here to return now</a>.</p>
+  <p class="thankyou-return"><a class="brand-link" href="../" title="Return to Verde Assist Group home page">Return to site</a></p>
+  <p id="countdown-wrap" class="thankyou-countdown">Returning to homepage in <span id="countdown" aria-live="polite">5</span> seconds. <a id="return-now" class="brand-link" href="../" title="Return immediately to home page">Click here to return now</a>.</p>
   </main>
 
   <footer class="site-footer">
@@ -90,7 +90,7 @@
     var countdownEl = document.getElementById('countdown');
   var returnNowLink = document.getElementById('return-now');
   // match either a primary button or plain brand-link that returns home
-  var returnBtn = document.querySelector('a.btn.primary[href="/"], a.brand-link[href="/"]');
+  var returnBtn = document.querySelector('a.btn.primary[href="../"], a.brand-link[href="../"]');
     var timerId = null;
 
     function updateDisplay() {
@@ -106,7 +106,7 @@
           // final update
           updateDisplay();
           // redirect to homepage
-          window.location.href = '/';
+          window.location.href = '../';
           return;
         }
         updateDisplay();

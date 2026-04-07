@@ -55,6 +55,15 @@ body::before {
   background-size: 40px 40px;
 }
 
+body::after {
+  content: '';
+  position: fixed;
+  inset: -10% -20%;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(126, 190, 255, 0.08) 48%, transparent 66%);
+  animation: light-sweep 13s linear infinite;
+}
+
 main,
 header,
 footer {
@@ -386,6 +395,58 @@ a.btn {
   padding: 2.5rem 0;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trust-bar {
+  border: 1px solid rgba(126, 190, 255, 0.24);
+  border-radius: var(--radius);
+  background: rgba(12, 30, 55, 0.68);
+  box-shadow: var(--shadow);
+  padding: 0.95rem;
+}
+
+.trust-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.trust-items li {
+  border: 1px solid rgba(126, 190, 255, 0.24);
+  border-radius: 10px;
+  padding: 0.62rem 0.7rem;
+  color: #d8e8fc;
+  background: rgba(10, 24, 44, 0.7);
+  font-weight: 600;
+}
+
+.timeline-grid {
+  position: relative;
+}
+
+.timeline-grid::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: 16.5%;
+  right: 16.5%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(126, 190, 255, 0.2), rgba(126, 190, 255, 0.75), rgba(126, 190, 255, 0.2));
+  z-index: 0;
+}
+
 .section-head {
   text-align: center;
   margin-bottom: 1.3rem;
@@ -417,6 +478,10 @@ a.btn {
   padding: 1rem;
   text-align: center;
   min-height: 100%;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .feature-icon {
@@ -430,6 +495,14 @@ a.btn {
   color: #cfe7ff;
   border: 1px solid rgba(126, 190, 255, 0.35);
   background: radial-gradient(circle at 30% 25%, rgba(126, 190, 255, 0.26), rgba(17, 38, 66, 0.88));
+  box-shadow: 0 0 0 1px rgba(126, 190, 255, 0.15), 0 0 18px rgba(126, 190, 255, 0.2);
+}
+
+.feature-card:hover,
+.feature-card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(126, 190, 255, 0.46);
+  box-shadow: 0 0 0 1px rgba(126, 190, 255, 0.14), 0 18px 44px rgba(3, 9, 20, 0.5), 0 0 24px rgba(126, 190, 255, 0.18);
 }
 
 .feature-card h3 {
@@ -447,6 +520,54 @@ a.btn {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.social-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.quote-card {
+  border: 1px solid rgba(126, 190, 255, 0.2);
+  border-radius: var(--radius);
+  background: rgba(12, 30, 55, 0.8);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  position: relative;
+}
+
+.quote-card::before {
+  content: '"';
+  position: absolute;
+  top: 0.45rem;
+  left: 0.8rem;
+  font-size: 2.3rem;
+  color: rgba(126, 190, 255, 0.35);
+  line-height: 1;
+}
+
+.quote-card p {
+  margin: 0.7rem 0 0.75rem;
+  color: #d9e8fb;
+  line-height: 1.55;
+}
+
+.quote-card cite {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.final-cta {
+  margin-top: 1.3rem;
+  border: 1px solid rgba(126, 190, 255, 0.32);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(800px 280px at 52% 45%, rgba(126, 190, 255, 0.2), transparent 65%),
+    linear-gradient(180deg, rgba(13, 33, 58, 0.95), rgba(8, 21, 39, 0.95));
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
 }
 
 .pillar {
@@ -547,6 +668,14 @@ a.btn {
   flex-wrap: wrap;
 }
 
+.funding-explained .feature-card h3 {
+  font-size: 1.24rem;
+}
+
+.funding-explained .feature-card p {
+  font-size: 0.98rem;
+}
+
 .site-footer {
   border-top: 1px solid rgba(126, 190, 255, 0.24);
   margin-top: 1.8rem;
@@ -639,8 +768,15 @@ a.btn {
   }
 
   .card-grid,
-  .pillars {
+  .pillars,
+  .social-proof-grid,
+  .trust-items {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline-grid::before {
+    left: 10%;
+    right: 10%;
   }
 }
 
@@ -681,8 +817,14 @@ a.btn {
   }
 
   .card-grid,
-  .pillars {
+  .pillars,
+  .social-proof-grid,
+  .trust-items {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-grid::before {
+    display: none;
   }
 
   .section {
@@ -692,6 +834,15 @@ a.btn {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@keyframes light-sweep {
+  0% {
+    transform: translateX(-18%);
+  }
+  100% {
+    transform: translateX(18%);
   }
 }
 
