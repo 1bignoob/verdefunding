@@ -62,7 +62,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
+      <a class="brand brand-home-link" href="../" title="Return to home page">
         <svg class="logo" width="36" height="36" viewBox="0 0 48 48" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1">
@@ -75,7 +75,7 @@
           <path d="M6 10.5 L17 10.5 L25 43 L40 10.5 L37 10.5 L22 43 Z" fill="url(#vg)" />
         </svg>
         <span class="site-title">Verde Assist Group</span>
-      </div>
+      </a>
 
       <nav class="primary-nav" aria-label="Primary navigation">
         <ul>
@@ -84,6 +84,16 @@
       </nav>
     </div>
   </header>
+
+  <div class="breadcrumbs-bar">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <span class="crumb-home">Home</span>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="../privacy/" aria-current="page" title="Privacy Policy">Privacy Policy</a>
+      </nav>
+    </div>
+  </div>
 
   <!-- Close/return button fixed in the top-right -->
   <a href="../" aria-label="Return to homepage" title="Return to homepage" class="close-btn">Close</a>
