@@ -656,10 +656,46 @@ a.btn {
   color: var(--brand);
 }
 
+.testimonials-rotator {
+  max-width: 74ch;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  border: 1px solid rgba(126, 190, 255, 0.22);
+  border-radius: var(--radius);
+  background: rgba(12, 30, 55, 0.65);
+  box-shadow: var(--shadow);
+  padding: 1.1rem 1.2rem;
+}
+
+.testimonial-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.testimonial-name {
+  color: #eaf4ff;
+}
+
+.testimonial-stars {
+  color: #ffd24a;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+}
+
+.testimonial-text {
+  margin: 0.7rem 0 0;
+  color: #d7e7fb;
+  line-height: 1.6;
+}
+
 .final-cta {
   margin-top: 3.5rem;
   border: 0;
-  border-top: 1px solid rgba(126, 190, 255, 0.2);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
@@ -690,7 +726,6 @@ a.btn {
 
 .contact-bar.final-cta {
   border: 0;
-  border-top: 1px solid rgba(126, 190, 255, 0.2);
   background: transparent;
   box-shadow: none;
   border-radius: 0;
