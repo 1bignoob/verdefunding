@@ -232,16 +232,16 @@ document.addEventListener('DOMContentLoaded', function () {
         var getVisibleCount = function () {
           var width = window.innerWidth || testimonialsHost.clientWidth || 1200;
           if (width >= 1280) {
-            return 5;
-          }
-          if (width >= 1024) {
             return 4;
           }
-          if (width >= 760) {
+          if (width >= 1024) {
             return 3;
           }
-          if (width >= 520) {
+          if (width >= 760) {
             return 2;
+          }
+          if (width >= 520) {
+            return 1;
           }
           return 1;
         };
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(function () {
           startIndex = (startIndex + 1) % valid.length;
           renderWindow();
-        }, 3000);
+        }, 6000);
 
         window.addEventListener('resize', renderWindow);
       })

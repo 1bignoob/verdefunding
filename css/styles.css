@@ -670,8 +670,8 @@ a.btn {
 }
 
 .testimonial-card {
-  flex: 0 0 220px;
-  width: 220px;
+  flex: 0 0 300px;
+  width: 300px;
   border: 1px solid rgba(126, 190, 255, 0.22);
   border-radius: var(--radius);
   background: rgba(12, 30, 55, 0.65);
