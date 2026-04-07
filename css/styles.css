@@ -295,7 +295,7 @@ main {
   margin: 0;
   max-width: 39ch;
   color: var(--muted);
-  font-size: 1.18rem;
+  font-size: 0.95rem;
   line-height: 1.55;
 }
 
