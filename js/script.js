@@ -131,4 +131,43 @@ document.addEventListener('DOMContentLoaded', function () {
       el.classList.add('visible');
     });
   }
+
+  var flipCards = document.querySelectorAll('.flip-card');
+  if (flipCards.length) {
+    var resetFlipCards = function () {
+      flipCards.forEach(function (card) {
+        card.classList.remove('is-flipped');
+        card.setAttribute('aria-pressed', 'false');
+      });
+    };
+
+    flipCards.forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var shouldFlip = !card.classList.contains('is-flipped');
+        resetFlipCards();
+        if (shouldFlip) {
+          card.classList.add('is-flipped');
+          card.setAttribute('aria-pressed', 'true');
+        }
+      });
+
+      card.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') {
+          return;
+        }
+        e.preventDefault();
+        var shouldFlip = !card.classList.contains('is-flipped');
+        resetFlipCards();
+        if (shouldFlip) {
+          card.classList.add('is-flipped');
+          card.setAttribute('aria-pressed', 'true');
+        }
+      });
+    });
+
+    document.addEventListener('click', function () {
+      resetFlipCards();
+    });
+  }
 });
