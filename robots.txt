@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /redirect/
+Disallow: /thank_you/
 
 Sitemap: https://verdeassistgroup.com/sitemap.xml
