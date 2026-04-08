@@ -1,0 +1,274 @@
+contact schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Apply for Pre-Settlement Funding",
+  "provider": {
+    "@type": "FinancialService",
+    "name": "Verde Assist Group",
+    "url": "https://verdeassistgroup.com/"
+  },
+  "description": "Apply for fast, non-recourse funding for your personal injury case. Quick approvals and funding available.",
+  "areaServed": "New York",
+  "potentialAction": {
+    "@type": "ApplyAction",
+    "name": "Start application",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://verdeassistgroup.com/contact/",
+      "inLanguage": "en",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    }
+  }
+}
+</script>
+
+about schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Verde Assist Group",
+  "url": "https://verdeassistgroup.com/about/",
+  "mainEntity": {
+    "@type": "FinancialService",
+    "name": "Verde Assist Group",
+    "description": "Verde Assist Group provides fast, non-recourse funding solutions to individuals with pending personal injury cases, helping them manage financial obligations while their case progresses."
+  }
+}
+</script>
+
+FAQ schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is pre-settlement funding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-settlement funding is a cash advance provided to plaintiffs with active personal injury cases, allowing them to access money before their case settles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to repay if I lose my case?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Verde Assist Group offers non-recourse funding, meaning repayment is only required if you win or settle your case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast can I get funded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many clients receive funding within 24 to 48 hours after approval, depending on case verification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need good credit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No credit check is required. Approval is based on the strength of your case, not your credit score."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of cases qualify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common qualifying cases include car accidents, slip and falls, workplace injuries, and other personal injury claims."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much funding can I receive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Funding amounts vary based on your case details, but are typically a portion of your expected settlement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this affect my lawsuit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Funding does not interfere with your legal case or your attorney’s strategy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need my attorney involved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your attorney helps provide case information needed to evaluate your eligibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there hidden fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All terms are clearly outlined in your agreement before you accept funding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What can I use the money for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Funds can be used for rent, bills, groceries, medical expenses, or any personal needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I make monthly payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No monthly payments are required. Repayment happens only if your case resolves successfully."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this a loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This is non-recourse funding, not a traditional loan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will applying affect my credit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no impact on your credit score when applying."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I apply if I already have funding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In some cases, additional funding may be available depending on your case status."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can apply by contacting us directly. We will guide you through a quick and simple process."
+      }
+    }
+  ]
+}
+</script>
+
+Service schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Legal Funding Services",
+  "provider": {
+    "@type": "FinancialService",
+    "name": "Verde Assist Group",
+    "url": "https://verdeassistgroup.com/"
+  },
+  "areaServed": "New York",
+  "serviceType": [
+    "Pre-settlement funding",
+    "Settlement buying",
+    "Legal funding",
+    "Non-recourse funding"
+  ],
+  "description": "Verde Assist Group offers non-recourse funding solutions for individuals with active personal injury cases, helping clients access funds before settlement."
+}
+</script>
+
+main page schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "@id": "https://verdeassistgroup.com/#organization",
+  "name": "Verde Assist Group",
+  "legalName": "Verde Assist Group, Inc",
+  "url": "https://verdeassistgroup.com/",
+  "logo": "https://verdeassistgroup.com/assets/img/og-image.webp",
+  "image": "https://verdeassistgroup.com/assets/img/og-image.webp",
+  "description": "Verde Assist Group provides fast, non-recourse pre-settlement funding for individuals with pending personal injury cases. We help clients access cash before their case settles so they can cover everyday expenses without financial pressure. There is no repayment unless you win or resolve your case.",
+  "telephone": "+1-718-300-5951",
+  "email": "verdeassistgroup@gmail.com",
+  "slogan": "Case delayed? We'll get you paid.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "244 Madison Avenue, PMB 1029",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10016",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Brooklyn",
+    "Bronx",
+    "Manhattan",
+    "Queens",
+    "Staten Island",
+    "New York"
+  ],
+  "availableLanguage": ["en", "es", "ru"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+1-718-300-5951",
+    "availableLanguage": ["English", "Spanish", "Russian"]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Legal Funding Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pre-settlement funding",
+          "description": "Fast cash advances for plaintiffs with active personal injury cases before settlement."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Settlement buying",
+          "description": "Access a portion of your expected settlement funds early to manage expenses."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Legal funding",
+          "description": "Non-recourse funding designed to support individuals during ongoing legal cases."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Non-recourse funding",
+          "description": "No repayment required unless your case results in a recovery, subject to contract terms."
+        }
+      }
+    ]
+  }
+}
+</script>

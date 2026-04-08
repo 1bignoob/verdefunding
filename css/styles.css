@@ -169,6 +169,7 @@ main {
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 0.01em;
+  word-spacing: 0.18em;
 }
 
 .primary-nav ul {
@@ -440,6 +441,10 @@ a.btn {
   padding: 0.68rem 0.76rem;
   font-size: 1rem;
   font-family: inherit;
+}
+
+.form-row textarea {
+  resize: none;
 }
 
 .form-row input::placeholder,

@@ -29,19 +29,30 @@
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "name": "Contact Verde Assist Group",
+    "name": "Apply for Pre-Settlement Funding",
     "url": "https://verdeassistgroup.com/contact/",
     "mainEntity": {
-      "@type": "Organization",
-      "name": "Verde Assist Group",
-      "telephone": "+1-718-300-5951",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "244 Madison Ave Suite 1029",
-        "addressLocality": "New York",
-        "addressRegion": "NY",
-        "postalCode": "10016",
-        "addressCountry": "US"
+      "@type": "Service",
+      "name": "Apply for Pre-Settlement Funding",
+      "provider": {
+        "@type": "FinancialService",
+        "name": "Verde Assist Group",
+        "url": "https://verdeassistgroup.com/"
+      },
+      "description": "Apply for fast, non-recourse funding for your personal injury case. Quick approvals and funding available.",
+      "areaServed": "New York",
+      "potentialAction": {
+        "@type": "ApplyAction",
+        "name": "Start application",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://verdeassistgroup.com/contact/",
+          "inLanguage": "en",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        }
       }
     }
   }
@@ -99,8 +110,8 @@
       <div class="container two-col">
         <article class="panel">
           <p class="eyebrow">Contact</p>
-          <h1>Request Funding Support</h1>
-          <p>Send us your information and our team will follow up to discuss your case and available options.</p>
+          <h1>Apply for Funding</h1>
+          <p>Get approved in 24-48 hours</p>
           <p class="slogan-line">Your case delayed? We'll get you paid with a fast, attorney-friendly review process.</p>
           <p><strong>Phone:</strong> <a class="brand-link" href="tel:7183005951" title="Call Verde Assist Group">(718) 300-5951</a></p>
           <p><strong>Address:</strong> <a class="brand-link" href="https://www.google.com/maps/place/244+Madison+Ave+Suite+1029,+New+York,+NY+10016" target="_blank" rel="noopener noreferrer" title="Open office location in Google Maps">244 Madison Ave Suite 1029, New York, NY 10016</a></p>
@@ -128,7 +139,7 @@
                 <label for="contact-message">Case Details</label>
                 <textarea id="contact-message" name="message" rows="4" placeholder="Tell us about your case"></textarea>
               </div>
-              <button type="submit" class="btn primary">Send Request</button>
+              <button type="submit" class="btn primary">Start Your Application</button>
             </div>
             <div class="form-status" role="status" aria-live="polite"></div>
           </form>
