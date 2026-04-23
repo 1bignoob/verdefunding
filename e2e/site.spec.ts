@@ -26,7 +26,7 @@ for (const { path, label } of pages) {
     await page.goto(path);
     const link = page.locator('.footer-brand-link');
     await expect(link).toBeVisible();
-    await expect(link).toHaveText('gothamwebdev.com');
+    await expect(link).toHaveText('GothamWebDev.com');
     await expect(link).toHaveAttribute('href', 'https://gothamwebdev.com');
   });
 
@@ -96,8 +96,8 @@ test('primary navigation links are present on home page', async ({ page }) => {
   // Sanity check that primary nav links exist in the DOM across responsive states.
   await page.goto('/');
   const nav = page.locator('#primary-navigation');
-  await expect(nav.locator('a[href="/services/"]')).toHaveCount(1);
-  await expect(nav.locator('a[href="/about/"]')).toHaveCount(1);
-  await expect(nav.locator('a[href="/faq/"]')).toHaveCount(1);
-  await expect(nav.locator('a[href="/contact/"]')).toHaveCount(1);
+  await expect(nav.locator('a', { hasText: 'Services' })).toHaveCount(1);
+  await expect(nav.locator('a', { hasText: 'About Us' })).toHaveCount(1);
+  await expect(nav.locator('a', { hasText: 'FAQ' })).toHaveCount(1);
+  await expect(nav.locator('a', { hasText: 'Contact' })).toHaveCount(1);
 });
